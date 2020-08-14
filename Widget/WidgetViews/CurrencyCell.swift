@@ -28,18 +28,28 @@ struct CurrencyCell: View {
     
     let textWidth: CGFloat  = 40.0
     let textPadding: CGFloat = 1.0
+    let currencyNameTextColor: Color = .black
+    let currencyValueTextColor: Color = .black
+    
+    var formatedCurrencyValue: String {
+        get {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = NumberFormatter.Style.decimal
+            guard let formattedNumber = numberFormatter.string(from: NSNumber(value:currencyValue)) else {return "N/A"}
+            return formattedNumber
+        }
+    }
     
     var body: some View {
-        
         HStack {
             Text(currencyName)
-                .foregroundColor(.white)
+                .foregroundColor(currencyNameTextColor)
                 .bold()
                 .frame(width: textWidth)
                 .padding(.trailing, textPadding)
             Spacer()
-            Text("\(String(format: "%.2f", currencyValue))" + currencySymbol)
-                .foregroundColor(.orange)
+            Text(formatedCurrencyValue + currencySymbol)
+                .foregroundColor(currencyValueTextColor)
         }
-    }
+    }//View
 }

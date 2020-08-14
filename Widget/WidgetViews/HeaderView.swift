@@ -16,20 +16,29 @@ struct HeaderView: View {
         case down = "arrowtriangle.down.circle.fill"
     }
     
+    private let count = WidgetDataModel.dynamics.count
     private var dynamicsImage: String {
         get {
-            if changePercentValue > 0 {
-                return sfImage.up.rawValue
-            } else{
-                return sfImage.down.rawValue
+            print("count = ",count)
+            if !WidgetDataModel.dynamics.isEmpty && count >= 2 {
+                let penultimateElement = WidgetDataModel.dynamics[count - 2]
+                print("last element is \(String(WidgetDataModel.dynamics.last!))")
+                print("penultimate element is \(penultimateElement)")
+                let distinction = WidgetDataModel.dynamics.last! - penultimateElement
+                if distinction > 0 {
+                    return sfImage.up.rawValue
+                } else {
+                    return sfImage.down.rawValue
+                }
             }
+            return "bitcoinsign.circle.fill"
         }
     }
     
     //MARK:- UI properties
     private let horizontalPadding: CGFloat = 5.0
     private let bottomPadding: CGFloat = 5.0
-    private let textColor: Color = .white
+    private let textColor: Color = .black
     
     private let cryptoCurrencyName: String = "BTC"
     

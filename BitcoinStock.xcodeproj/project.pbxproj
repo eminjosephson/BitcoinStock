@@ -17,6 +17,10 @@
 		3799141724E41B5600EE7F0E /* BitcoinDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799141524E41B5600EE7F0E /* BitcoinDataLoader.swift */; };
 		3799141A24E425A200EE7F0E /* BitcoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799141924E425A200EE7F0E /* BitcoinData.swift */; };
 		3799141B24E425A200EE7F0E /* BitcoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799141924E425A200EE7F0E /* BitcoinData.swift */; };
+		37B5C6F624E6A0DB00B428AA /* DynamicsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5C6F524E6A0DB00B428AA /* DynamicsChart.swift */; };
+		37B5C6F724E6A0DB00B428AA /* DynamicsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5C6F524E6A0DB00B428AA /* DynamicsChart.swift */; };
+		37B5C6F924E6A2DD00B428AA /* BarLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5C6F824E6A2DD00B428AA /* BarLine.swift */; };
+		37B5C6FA24E6A2DD00B428AA /* BarLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5C6F824E6A2DD00B428AA /* BarLine.swift */; };
 		37E66A3724E3DF0A009A8CFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E66A3624E3DF0A009A8CFE /* AppDelegate.swift */; };
 		37E66A3924E3DF0A009A8CFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E66A3824E3DF0A009A8CFE /* SceneDelegate.swift */; };
 		37E66A3B24E3DF0A009A8CFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E66A3A24E3DF0A009A8CFE /* ContentView.swift */; };
@@ -68,6 +72,8 @@
 		376985CE24E525BF00F04067 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3799141524E41B5600EE7F0E /* BitcoinDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinDataLoader.swift; sourceTree = "<group>"; };
 		3799141924E425A200EE7F0E /* BitcoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinData.swift; sourceTree = "<group>"; };
+		37B5C6F524E6A0DB00B428AA /* DynamicsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsChart.swift; sourceTree = "<group>"; };
+		37B5C6F824E6A2DD00B428AA /* BarLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLine.swift; sourceTree = "<group>"; };
 		37E66A3324E3DF0A009A8CFE /* BitcoinStock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinStock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E66A3624E3DF0A009A8CFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37E66A3824E3DF0A009A8CFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +211,8 @@
 				37E66A6C24E3E234009A8CFE /* MainWidgetView.swift */,
 				376985CE24E525BF00F04067 /* HeaderView.swift */,
 				376985C824E51E6C00F04067 /* CurrencyCell.swift */,
+				37B5C6F524E6A0DB00B428AA /* DynamicsChart.swift */,
+				37B5C6F824E6A2DD00B428AA /* BarLine.swift */,
 			);
 			path = WidgetViews;
 			sourceTree = "<group>";
@@ -315,11 +323,13 @@
 				37E66A5C24E3DF59009A8CFE /* Widget.intentdefinition in Sources */,
 				37E66A3724E3DF0A009A8CFE /* AppDelegate.swift in Sources */,
 				376985CC24E522CE00F04067 /* Dictionary.swift in Sources */,
+				37B5C6F624E6A0DB00B428AA /* DynamicsChart.swift in Sources */,
 				37E66A6524E3DFD5009A8CFE /* DataProvider.swift in Sources */,
 				37E66A6924E3E056009A8CFE /* Model.swift in Sources */,
 				376985CF24E525BF00F04067 /* HeaderView.swift in Sources */,
 				37E66A3924E3DF0A009A8CFE /* SceneDelegate.swift in Sources */,
 				3799141624E41B5600EE7F0E /* BitcoinDataLoader.swift in Sources */,
+				37B5C6F924E6A2DD00B428AA /* BarLine.swift in Sources */,
 				3799141A24E425A200EE7F0E /* BitcoinData.swift in Sources */,
 				37E66A3B24E3DF0A009A8CFE /* ContentView.swift in Sources */,
 			);
@@ -330,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				376985CA24E51E6C00F04067 /* CurrencyCell.swift in Sources */,
+				37B5C6FA24E6A2DD00B428AA /* BarLine.swift in Sources */,
 				37E66A6624E3DFD5009A8CFE /* DataProvider.swift in Sources */,
 				3799141B24E425A200EE7F0E /* BitcoinData.swift in Sources */,
 				37E66A6E24E3E234009A8CFE /* MainWidgetView.swift in Sources */,
@@ -339,6 +350,7 @@
 				37E66A5B24E3DF59009A8CFE /* Widget.intentdefinition in Sources */,
 				37E66A5624E3DF57009A8CFE /* Widget.swift in Sources */,
 				37E66A6A24E3E056009A8CFE /* Model.swift in Sources */,
+				37B5C6F724E6A0DB00B428AA /* DynamicsChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

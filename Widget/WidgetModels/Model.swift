@@ -7,6 +7,7 @@
 
 import Foundation
 import WidgetKit
+import SwiftUI
 
 struct WidgetDataModel: TimelineEntry {
     let date: Date
@@ -14,4 +15,7 @@ struct WidgetDataModel: TimelineEntry {
     let usd: Double
     let eur: Double
     let gbp: Double
+    
+    //Fake initial dynamics data
+    static var dynamics: [Double] = [0.1, 0.2, 0.4, 0.7, 0.9, 1.4, 1.1, 0.7, 0.6, 0.4, 0.2, -0.1, -0.5, -0.8, -0.9,-0.7,-0.8, -0.5, -0.4, -0.1, 0.2]
 }

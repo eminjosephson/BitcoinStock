@@ -7,8 +7,28 @@
 
 import Foundation
 import WidgetKit
+import SwiftUI
 
 struct DataProvider: TimelineProvider {
+    
+    private func appendDynamics(_ changePercent: Double) {
+        let maxElementsCount = 22
+        
+        if WidgetDataModel.dynamics.count < maxElementsCount {
+            if (WidgetDataModel.dynamics.last != changePercent) {
+                WidgetDataModel.dynamics.append(changePercent)
+                print(changePercent)
+                print(WidgetDataModel.dynamics)
+            }
+        } else {
+            if WidgetDataModel.dynamics.last != changePercent {
+                WidgetDataModel.dynamics.remove(at: 0)
+                WidgetDataModel.dynamics.append(changePercent)
+                print( WidgetDataModel.dynamics)
+            }
+            print(WidgetDataModel.dynamics)
+        }
+    }
     
     func timeline(with context: Context, completion: @escaping (Timeline<WidgetDataModel>) -> ()) {
         let date = Date()
@@ -24,6 +44,8 @@ struct DataProvider: TimelineProvider {
                 let gbpPrice = bitcoinData.raw.btc.gbp.price
                 let eurPrice = bitcoinData.raw.btc.eur.price
                 
+                appendDynamics(changePercent)
+                
                 //MARK:- Initializing data entry
                 let data = WidgetDataModel(
                     date: date,
@@ -33,7 +55,10 @@ struct DataProvider: TimelineProvider {
                     gbp: gbpPrice
                 )
                 
-                let refreshDate = Calendar.current.date(byAdding: .minute, value: 10, to: date)!
+                //MARK:- Widget timeline updating
+                let updateValue: Int = 1
+                let timePeriod = Calendar.Component.minute
+                let refreshDate = Calendar.current.date(byAdding: timePeriod, value: updateValue, to: date)!
                 let timeLine = Timeline(entries: [data], policy: .after(refreshDate))
                 
                 completion(timeLine)
@@ -41,6 +66,7 @@ struct DataProvider: TimelineProvider {
         }//load
     }
     
+    //MARK:- Fake widget data for overview in widget panel
     func snapshot(with context: Context, completion: @escaping (WidgetDataModel) -> ()) {
         let date = Date()
         

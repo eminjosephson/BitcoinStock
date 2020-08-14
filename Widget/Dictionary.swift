@@ -21,4 +21,16 @@ enum currencySymbols: String, CodingKey {
     case unknown = "N/A"
 }
 
+enum scale: Double {
+    case large30 = 30
+    case large20 = 20
+    case large10 = 10
+    case medium = 7.5
+    case medium5 = 5
+    case small = 3.75
+    case small3 = 3
+    case initial = 1
+    case decrease = 0.7
+}
+
 
