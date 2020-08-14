@@ -18,14 +18,13 @@ struct BarLine: View {
     let indicatorBarWidth: CGFloat = 3.0
     let barWidth: CGFloat = 5.0
     let barCornerRadius: CGFloat = 1.5
-    let spacing: CGFloat = 1.0
+    let spacing: CGFloat = 0.5
     let opacityValue: Double = 0.9
     let zeroHeight: CGFloat = 0.0
     
     var body: some View {
         
         HStack(alignment: alignment, spacing: spacing) {
-            
             //MARK:- indicator bar
             Rectangle()
                 .fill(barColor.opacity(opacityValue))
@@ -41,8 +40,8 @@ struct BarLine: View {
                         
                         if element > 0 {
                             Rectangle()
-                                .fill(Color.blue.opacity(opacityValue))
-                                .frame(width: 4, height: 3)
+                                .fill(Color.orange.opacity(opacityValue))
+                                .frame(width: 3, height: 3)
                                 .cornerRadius(barCornerRadius)
                         }
                         
@@ -53,8 +52,8 @@ struct BarLine: View {
                         
                         if element < 0 {
                             Rectangle()
-                                .fill(Color.blue.opacity(opacityValue))
-                                .frame(width: 4, height: 3)
+                                .fill(Color.orange.opacity(opacityValue))
+                                .frame(width: 3, height: 3)
                                 .cornerRadius(barCornerRadius)
                         }
                             

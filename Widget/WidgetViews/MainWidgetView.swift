@@ -10,14 +10,14 @@ import SwiftUI
 struct MainWidgetView: View {
     var data: DataProvider.Entry
     
-    let fillColor: Color = Color.orange
+//    let fillColor: Color = Color.orange
     let cornerRadius: CGFloat = 14.0
 
     let backgroundColor: Color = Color.white.opacity(0.2)
     let smallPadding: CGFloat = 2.0
-    let mediumPadding: CGFloat = 8.0
+    let mediumPadding: CGFloat = 10.0
     
-    let colors = Gradient(colors: [.orange, .orange, Color.orange.opacity(0.8)])
+    let colors = Gradient(colors: [.black])
     var MainRectangleGradient: LinearGradient {
         return LinearGradient(
             gradient: colors,
@@ -26,7 +26,7 @@ struct MainWidgetView: View {
         )
     }
     
-    let innerColors = Gradient(colors: [Color.white.opacity(0.15), .orange, .orange])
+    let innerColors = Gradient(colors: [Color.white.opacity(0.1)])
     var innerRectangleGradient: LinearGradient {
         return LinearGradient(
             gradient: innerColors,
@@ -40,18 +40,14 @@ struct MainWidgetView: View {
             Rectangle().fill(MainRectangleGradient)
             VStack {
                 HeaderView(changePercentValue: data.changePercent)
-                VStack {
-                    Spacer()
-                    CurrencyCell(
-                        currencyValue: data.usd,
-                        currencyName: currencyCode.USD.rawValue)
-                    Spacer()
-                    DynamicsChart()
-                }
-                .padding(smallPadding)
-                .background(innerRectangleGradient)
-                .cornerRadius(cornerRadius)
-            }.padding(mediumPadding)//VStack
+                Spacer()
+                DynamicsChart()
+                Spacer()
+                CurrencyCell(
+                    currencyValue: data.usd,
+                    currencyName: currencyCode.USD.rawValue)
+                
+            }//VStack
         }//ZStack
     }
 }

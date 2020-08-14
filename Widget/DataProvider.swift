@@ -12,7 +12,7 @@ import SwiftUI
 struct DataProvider: TimelineProvider {
     
     private func appendDynamics(_ changePercent: Double) {
-        let maxElementsCount = 22
+        let maxElementsCount = 24
         
         if WidgetDataModel.dynamics.count < maxElementsCount {
             if (WidgetDataModel.dynamics.last != changePercent) {

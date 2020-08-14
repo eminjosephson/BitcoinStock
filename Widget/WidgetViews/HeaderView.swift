@@ -36,9 +36,9 @@ struct HeaderView: View {
     }
     
     //MARK:- UI properties
-    private let horizontalPadding: CGFloat = 5.0
-    private let bottomPadding: CGFloat = 5.0
-    private let textColor: Color = .black
+    private let horizontalPadding: CGFloat = 0.0
+    private let bottomPadding: CGFloat = 0.0
+    private let textColor: Color = .white
     
     private let cryptoCurrencyName: String = "BTC"
     
@@ -56,7 +56,7 @@ struct HeaderView: View {
             Text("\(String(format:"%.2f", changePercentValue))%")
                 .foregroundColor(textColor)
         }
-        .padding(.bottom, bottomPadding)
-        .padding(.horizontal, horizontalPadding)
+        .padding(.horizontal, 15)
+        .padding(.vertical, 10)
     }
 }

@@ -50,7 +50,7 @@ struct DynamicsChart: View {
     let chartHeight: CGFloat = 60.0
     let bottomPadding: CGFloat = 10.0
     let horizontalPadding: CGFloat = 4.0
-    let verticalSpacing: CGFloat = 0.0
+    let verticalSpacing: CGFloat = 1
     
     var body: some View {
         HStack {
@@ -62,6 +62,15 @@ struct DynamicsChart: View {
                     alignment: .bottom) { (element: Double) -> Bool in
                     element > 0
                 }
+                
+                HStack (spacing: 2) {
+                    ForEach(DataProvider.Entry.dynamics, id: \.self) {_ in
+                        Rectangle()
+                            .frame(width: 4, height: 1)
+                            .foregroundColor(Color.green.opacity(0.7))
+                    }
+                }.padding(.leading, 5)
+                    
                 BarLine(
                     barScale: plotScale.rawValue,
                     cryptoDynamicsData: DataProvider.Entry.dynamics,
@@ -71,10 +80,7 @@ struct DynamicsChart: View {
                 }
             }//VStack
             Spacer()
-        }
-        .frame(height: chartHeight)
-        .padding(.bottom, bottomPadding)
-        .padding(.horizontal, horizontalPadding)
+        }.padding(.horizontal, 10)
         //HStack
     }//View
 }

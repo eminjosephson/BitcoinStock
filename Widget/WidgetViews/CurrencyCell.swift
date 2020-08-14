@@ -28,8 +28,8 @@ struct CurrencyCell: View {
     
     let textWidth: CGFloat  = 40.0
     let textPadding: CGFloat = 1.0
-    let currencyNameTextColor: Color = .black
-    let currencyValueTextColor: Color = .black
+    let currencyNameTextColor: Color = .white
+    let currencyValueTextColor: Color = .white
     
     var formatedCurrencyValue: String {
         get {
@@ -48,8 +48,10 @@ struct CurrencyCell: View {
                 .frame(width: textWidth)
                 .padding(.trailing, textPadding)
             Spacer()
-            Text(formatedCurrencyValue + currencySymbol)
+            Text(formatedCurrencyValue)
                 .foregroundColor(currencyValueTextColor)
         }
+        .padding(.horizontal, 15)
+        .padding(.bottom, 10)
     }//View
 }
